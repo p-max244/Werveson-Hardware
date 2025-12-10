@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" aria-labelledby="title">
+  <title id="title">Werveson Hardware</title>
+  <rect width="160" height="40" rx="6" fill="#f5f5f5" />
+  <g fill="#1f5a4a">
+    <circle cx="18" cy="20" r="10" fill="#e6f4ef" stroke="#1f5a4a" stroke-width="2"/>
+    <path d="M40 10 L52 10 L52 30 L40 30 Z" fill="#1f5a4a"/>
+  </g>
+  <text x="70" y="25" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1f5a4a">Werveson Hardware</text>
+</svg>

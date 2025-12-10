@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Werveson Hardware</title>
+  <meta name="description" content="Contact Werveson Hardware for product inquiries, consultations, or orders." />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="site-header container">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="logo" class="logo" /><span>Werveson Hardware</span></a>
+    <nav class="site-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a></nav>
+  </header>
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Use the form below or visit our store.</p>
+
+    <!-- Example secure contact form: connect this to Formspree, Netlify Forms, or your backend. -->
+    <form id="contactForm" action="#" method="post">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <section class="contact-details">
+      <h2>Visit Us</h2>
+      <p>123 Main Street, Yourtown</p>
+      <p>Phone: (555) 123-4567</p>
+      <p>Email: hello@werveson.example (replace with real address)</p>
+    </section>
+
+    <section class="privacy-note">
+      <h3>Privacy & Security</h3>
+      <p>We do not sell your personal data. The contact form submits only basic info. For production use, secure the form with HTTPS and process submissions on a server or a trusted 3rd-party form provider (Formspree, Netlify Forms, etc.) to avoid exposing API keys in client code.</p>
+    </section>
+  </main>
+  <footer class="site-footer container">© Werveson Hardware</footer>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
