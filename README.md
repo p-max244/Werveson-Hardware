@@ -1,4 +1,4 @@
-# Werveson Hardware — Static Site Scaffold
+# Werveson Hardware 
 
 This scaffold is a lightweight static website for a family-owned electrical supplies business. It includes HTML, CSS, JS, and a minimal logo SVG so you can preview locally and customize.
 
