@@ -1,38 +1,395 @@
-:root{
-  --color-bg: #ffffff;
-  --color-accent: #1f5a4a; /* deep teal for trust */
-  --color-warm: #f6a85a; /* warm accent */
-  --color-muted: #6b6b6b;
-  --container-width: 1100px;
-  --radius: 8px;
-  --max-width: 1100px;
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* ----------------------
+   Custom Fonts
+------------------------ */
+@font-face {
+  font-family: "AutomatonCaps";
+  src: url("../assets/fonts/AutomatonCapsLightSSK-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-*{box-sizing:border-box}
-body{font-family:var(--font-sans);margin:0;color:#111;background:var(--color-bg);line-height:1.5}
-.container{max-width:var(--container-width);margin:0 auto;padding:1rem}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0}
-.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:inherit}
-.logo{height:38px}
-.site-nav{display:flex;gap:1rem;align-items:center}
-.site-nav a{text-decoration:none;color:var(--color-muted)}
-.site-nav a.cta{background:var(--color-accent);color:white;padding:.5rem .75rem;border-radius:6px}
-.nav-toggle{display:none}
-.hero{background:linear-gradient(90deg,rgba(31,90,74,0.06),rgba(246,168,90,0.03));padding:2.5rem 0}
-.hero-inner{display:flex;gap:2rem;align-items:center}
-.hero-text h1{font-size:2rem;margin:0 0 .5rem}
-.btn{background:var(--color-accent);color:white;padding:.6rem 1rem;border-radius:6px;text-decoration:none}
-.btn-secondary{background:transparent;border:1px solid var(--color-accent);color:var(--color-accent)}
-.values{padding:2rem 0}
-.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-.product-card{border:1px solid #eee;padding:1rem;border-radius:var(--radius);background:white}
-.site-footer{background:#fafafa;padding:1rem 0;margin-top:2rem}
-.footer-inner{display:flex;justify-content:space-between;align-items:center}
-.testimonials-grid{display:grid;gap:1rem}
-@media(max-width:800px){
-  .hero-inner{flex-direction:column}
-  .nav-toggle{display:block}
-  .site-nav{display:none;flex-direction:column;gap:.5rem}
-  .site-nav.open{display:flex}
+
+@font-face {
+  font-family: "ClassicalGaramond";
+  src: url("../assets/fonts/ClassicalGaramondBT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+
+/* ----------------------
+   Global Styles
+------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "ClassicalGaramond", serif;
+  background: #f9fafb;
+  color: #222;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----------------------
+   Header
+------------------------ */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-family: "AutomatonCaps", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.nav-toggle {
+  font-size: 1.7rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-family: "AutomatonCaps", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  transition: 0.2s;
+}
+
+.site-nav a:hover {
+  color: #0077ff;
+}
+
+.site-nav .cta {
+  background: #0077ff;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.site-nav .cta:hover {
+  background: #005fcc;
+}
+
+@media (max-width: 780px) {
+  .nav-toggle {
+    display: block;
+  }
+  .site-nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    padding: 15px 0;
+    display: none;
+    border: 1px solid #ddd;
+  }
+  .site-nav.active {
+    display: flex;
+  }
+}
+
+/* ----------------------
+   Hero Section
+------------------------ */
+.hero {
+  padding: 60px 0;
+  background: #eef4ff;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-family: "AutomatonCaps", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  margin-bottom: 16px;
+}
+
+.hero .btn {
+  display: inline-block;
+  background: #0077ff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.hero .btn-secondary {
+  background: #444;
+}
+
+.hero .btn:hover {
+  opacity: 0.9;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+@media (max-width: 780px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image img {
+    max-width: 90%;
+  }
+}
+
+/* ----------------------
+   About / Signage Images
+------------------------ */
+.about-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* ----------------------
+   Values Section
+------------------------ */
+.values {
+  padding: 40px 0;
+}
+
+.values h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: "AutomatonCaps", sans-serif;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.value {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+}
+
+/* ----------------------
+   Featured Products
+------------------------ */
+.featured {
+  padding: 50px 0;
+}
+
+.featured h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "AutomatonCaps", sans-serif;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+}
+
+.product-card h4 {
+  padding: 12px 15px 5px;
+  font-family: "AutomatonCaps", sans-serif;
+}
+
+.product-card p {
+  padding: 0 15px 10px;
+  color: #555;
+  font-family: "ClassicalGaramond", serif;
+}
+
+/* ----------------------
+   Footer
+------------------------ */
+/* ----------------------
+   Footer
+------------------------ */
+.site-footer {
+  background-color: #f9f9f9; /* lighter background for footer */
+  color: #222;
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-left strong {
+  font-family: "AutomatonCaps", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.footer-left p {
+  font-family: "ClassicalGaramond", serif;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.footer-branding {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-branding img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.footer-branding img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Right side: Contact info */
+.footer-right.contact-box {
+  background-color: #fff; /* prominent white box */
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.footer-right.contact-box a {
+  text-decoration: none;
+  color: #222;
+  font-family: "ClassicalGaramond", serif;
+  font-weight: 500;
+}
+
+.footer-right.contact-box a:hover {
+  color: #0077ff;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-icons img {
+  height: 28px;
+  width: 28px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Footer */
+@media (max-width: 780px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-right.contact-box {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
